@@ -15,4 +15,4 @@
 **/._*
 
 # Dawnsbury Days game assemblies are required for local builds but must not be redistributed.
-Dawnsbury.Inventor.Remaster/GameReferences/*.dll
+**/GameReferences/*.dll
