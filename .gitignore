@@ -1,1 +1,18 @@
-m«ëˆ§½©buªàºg§·õ,z»?“)^ü:ºg§¶ÏÂ¡×±ü6°»«È6²°Êv)àü6°Æî¯"'½éí¢´^™«-z¿àŠØ ŠŞRÆ y¶¬{®vçºh¢ø¥zŠ.µø¥y¶ëy©­æ¤zw(uçl¶¸§‚)í¢{¦r«iË^®X§zÀİuç(uç^r‡^²)éºØazZ]ŠÊek+aŠÉ²Æ z(§¦ëb›­~)^uçÚº[_¢»-v)è¢ëiºÚ.¶›­~)^uçÚº[_¢»-v‹­
+# Build outputs
+**/bin/
+**/obj/
+
+# IDE files
+.vs/
+.idea/
+*.suo
+*.user
+
+# macOS metadata
+.DS_Store
+._*
+**/.DS_Store
+**/._*
+
+# Dawnsbury Days game assemblies are required for local builds but must not be redistributed.
+Dawnsbury.Inventor.Remaster/GameReferences/*.dll

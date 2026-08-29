@@ -1,1 +1,22 @@
-m«ëˆ§½©buªàºg§·õ,z»?“)^ü:ºg§¶ÏÂ¡×±ü6°»«È6²°Êv)àü6°Æî¯"'½éí¢´^™«-z¿Ãk	ìnêò"{ŞÚ+Eéš²×«üÊ.†z·,RÆ y¶¬{®vçºh¢ø¥zŠ.µø¥y¶ëy©­æ¤zw(uçl¶¸§‚)í¢{¦r«iË^®X§zÀİuç(uç^r‡^²)éºØazZ]ŠÊek+aŠÉ²Æ z(§¦ëb›­~)^uçÚº[_¢»-v)è¢ëiºÚ.¶›­~)^uçÚº[_¢»-v‹­
+ï»¿using Dawnsbury.Core;
+using Dawnsbury.Modding;
+
+namespace InventorRemaster
+{
+    public class ModLoader
+    {
+        public const string UnstableContingenciesSetting = "Dawnsbury.Inventor.Remaster.UnstableContingencies";
+
+        [DawnsburyDaysModMainMethod]
+        public static void LoadMod()
+        {
+            ModManager.RegisterBooleanSettingsOption(
+                UnstableContingenciesSetting,
+                "Inventor Remaster: Enable Unstable Contingencies",
+                "Grants Inventors the homebrew Unstable Contingencies class feature at level 3. Unstable actions are locked after the second failed unstable check, or after the third failed check at level 7.",
+                false);
+
+            Dawnsbury.Core.CharacterBuilder.FeatsDb.AllFeats.All.AddRange(InventorRemaster.LoadAll());
+        }
+    }
+}
