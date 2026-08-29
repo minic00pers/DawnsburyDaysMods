@@ -2,45 +2,6 @@
 
 A Dawnsbury Days implementation of the Pathfinder 2e Remastered Inventor class. This project began as a remaster-focused fork of Brick264's [Inventor Class mod](https://github.com/DINGLEBOB/DawnsburyMods/tree/main/Inventor).
 
-Rules references:
-
-- [Dawnsbury Days example mods and developer instructions](https://github.com/dawnsbury/dawnsbury-days-example-mods)
-- [Remastered Oil Fire](https://2e.aonprd.com/Feats.aspx?ID=7073)
-- [Remastered Inventor innovations](https://2e.aonprd.com/Innovations.aspx?ID=1)
-
-## Development milestones
-
-### 1. Oil Fire — complete
-
-- Reimplemented Oil Fire as a level-2, one-action, unstable Inventor feat requiring an armor innovation.
-- Requires the Inventor to have the target grabbed.
-- Uses a Reflex save against the Inventor class DC.
-- Ends the grab on a critical success or success.
-- Applies persistent fire damage of 1 on a success, half the Inventor's level on a failure, or the Inventor's level on a critical failure.
-- Performs the normal unstable check after use.
-
-### 2. Overdrive — complete
-
-- Updated Overdrive's four degrees of success to the Remastered rules.
-- Corrected normal and critical Overdrive damage scaling.
-- A failure grants 1 additional fire damage if the Inventor was not already in Overdrive.
-- A critical failure ends the current Overdrive, deals the appropriate self-damage, and prevents another attempt for 1d4 rounds.
-- Construct companions receive and lose the corresponding Overdrive effects with their Inventor.
-
-### 3. Advanced Rangefinder — complete
-
-- Corrected Advanced Rangefinder's classification so it appears as a breakthrough weapon modification.
-- It grants backstabber and increases the innovation weapon's range increment by 20 feet.
-
-### 4. Rules text and mechanics synchronization — complete with one deferred conversion
-
-- Harmonic Oscillator now grants resistance equal to 3 + half level against force and sonic damage, increased by 2 during Overdrive.
-- Metallic Reactance now grants resistance equal to 3 + half level against acid and electricity damage, increased by 2 during Overdrive.
-- Phlogistonic Regulator now grants resistance equal to half level against cold and fire damage, increased by 2 during Overdrive.
-- Muscular Exoskeleton and Subtle Dampeners document and implement their level-7 bonus increase.
-- Corrected rules or implementation mismatches in Tamper, Searing Restoration, Gigaton Strike, Razor Prongs, and Visual Fidelity.
-- A full Remastered conversion of Otherworldly Protection's legacy damage types is deferred. Its existing negative and alignment resistances remain unchanged.
-
 ## Optional SpiritDamage compatibility
 
 [SpiritDamage](https://github.com/SilchasRuin/SpiritDamage/tree/master/SpiritDamage) is optional and is not a compile-time dependency.
