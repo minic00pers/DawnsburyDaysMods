@@ -7,3 +7,4 @@ A collection of mods for [Dawnsbury Days](https://store.steampowered.com/app/269
 | Mod | Description |
 | --- | --- |
 | [Dawnsbury.Inventor.Remaster](Dawnsbury.Inventor.Remaster/) | A Dawnsbury Days implementation of the Pathfinder 2e Remastered Inventor class |
+| [Dawnsbury.Impossible.Archetypes](Dawnsbury.Impossible.Archetypes/) | Archetypes from Pathfinder Impossible Magic, beginning with World Rouser |

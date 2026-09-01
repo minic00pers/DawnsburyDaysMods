@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <Platform>x64</Platform>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>x64</Platforms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Dawnsbury.Impossible.Archetypes</RootNamespace>
+    <AssemblyName>Dawnsbury.Impossible.Archetypes</AssemblyName>
+
+    <!-- Override either path at build time with -p:GameInstallDirectory=... or -p:GameDataDirectory=... -->
+    <GameInstallDirectory Condition="'$(GameInstallDirectory)' == '' and '$(OS)' == 'Windows_NT'">D:\SteamLibrary\steamapps\common\Dawnsbury Days</GameInstallDirectory>
+    <GameDataDirectory Condition="'$(GameDataDirectory)' == '' and '$(GameInstallDirectory)' != ''">$(GameInstallDirectory)/Data</GameDataDirectory>
+    <GameDataDirectory Condition="'$(GameDataDirectory)' == ''">$(MSBuildProjectDirectory)/GameReferences</GameDataDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Common">
+      <HintPath>$(GameDataDirectory)/Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Dawnsbury Days">
+      <HintPath>$(GameDataDirectory)/Dawnsbury Days.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(GameDataDirectory)/MonoGame.Framework.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="VerifyGameReferences" BeforeTargets="ResolveReferences"
+          Condition="!Exists('$(GameDataDirectory)/Common.dll') or !Exists('$(GameDataDirectory)/Dawnsbury Days.dll') or !Exists('$(GameDataDirectory)/MonoGame.Framework.dll')">
+    <Error Text="Dawnsbury Days references were not found in '$(GameDataDirectory)'. Set GameDataDirectory or copy Common.dll, Dawnsbury Days.dll, and MonoGame.Framework.dll into GameReferences." />
+  </Target>
+
+  <Target Name="CopyToGameModsFolder" AfterTargets="Build"
+          Condition="'$(OS)' == 'Windows_NT' and '$(GameInstallDirectory)' != '' and Exists('$(GameInstallDirectory)/CustomMods')">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameInstallDirectory)/CustomMods" />
+  </Target>
+</Project>
